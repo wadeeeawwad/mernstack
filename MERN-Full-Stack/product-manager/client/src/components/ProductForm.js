@@ -18,6 +18,9 @@ const ProductForm = () => {
       })
           .then(res=>console.log(res))
           .catch(err=>console.log(err))
+          setTitle("");
+          setPrice("");
+          setDescription("");
   }
   //onChange to update firstName and lastName
   return (
