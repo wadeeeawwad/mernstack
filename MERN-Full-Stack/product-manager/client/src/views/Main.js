@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import ProductForm from '../components/ProductForm';
-import PersonList from '../components/ProductList';
+import ProductList from '../components/ProductList';
 const Main = () => {
-    const [ message, setMessage ] = useState("Loading...")
+    
     const [product, setProduct] = useState([]);
     const [loaded, setLoaded] = useState(false);
     
@@ -17,12 +17,20 @@ const Main = () => {
     const removeFromDom = productId => {
         setProduct(product.filter(product => product._id !== productId));
     }
+    const createProduct = product2 => {
+        axios.post('http://localhost:8000/api/product', product2)
+            .then(res=>{
+                console.log("hello")
+                setProduct([...product, res.data]);
+            })
+    }
     return (
         <>
-            <h2>Message from the backend: {message}</h2>
-            <ProductForm/>
+        <ProductForm onSubmitProp={createProduct} initialTitle="" initialPrice="" initialDescription=""/>
+        <hr/>
+            
             <hr/>
-            {loaded && <PersonList product={product} removeFromDom={removeFromDom}/>}
+            {loaded && <ProductList product={product} removeFromDom={removeFromDom}/>}
        
         </>
 
