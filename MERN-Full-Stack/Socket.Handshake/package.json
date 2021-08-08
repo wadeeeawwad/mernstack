@@ -1,0 +1,25 @@
+{
+  "name": "Socket.io_Handshake",
+  "version": "1.0.0",
+  "description": "Practicing, making a socket connection, creating a basic MERN project and set up the socket connection between the client and the server.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunnuke/Socket.io_Handshake.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sunnuke/Socket.io_Handshake/issues"
+  },
+  "homepage": "https://github.com/Sunnuke/Socket.io_Handshake#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.1.0"
+  }
+}
